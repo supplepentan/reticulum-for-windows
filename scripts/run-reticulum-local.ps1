@@ -1,0 +1,10 @@
+# run-local.ps1 - PowerShell で Phoenix サーバを起動するスクリプト
+
+# PERMS_KEY 環境変数に公開鍵の値を設定
+$env:PERMS_KEY = @"
+-----BEGIN PUBLIC KEY-----MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEA4DqzTZi63BHxgp1V2sg7jamsAom2NzFs6dWroocLUycpCoH6pvf3kqSfBo/z6Ot09sM5uvfpI2klq/g6OaCFEIG5AkraklyUWzxveHjZSq8kTBeeERLtL0QchdXM7krg0z90UUi5p/WeFLYT+1jEV3zoVZapRwMC/5OD7mXRzQ1Z3x+sH3MZlt36GqP4skI9pt1ues30GiaS41RcY1Q5gtvIGTyrcA0p3IPXGkHDPoA+JU7IOPRejfS5C8gOKPMiBzEGYqCbXO2adiP4hrzCaHgcYfC7M8rAZr6+a+Eo1R1eRnnEgK2JuE9sYuCFToX2vcCGzABmKoDGiY6Heq7tCVQvxFaQACCjjLHxKxFfOtqp18fs/xv0JtpZuP6NxnDDhIRIzDYDqRHbeey+kV1bShfzw0gYqOCnrvNCdTpZRYjF2+33h33c8xahHMOMDwaW/IlwBYmArkKiZ2JNEb92X7hb8Q4QWPtqE56RXgMyUQ7cxIqbZUuKzsXC8CrtHzbHxCmrkwnFC7Pz0BDPJks7IQqoTXGAmKR5cjOyjelx53KgXS0oAzYMRi4jouAfDDJ2X766h3Bv/o63LEm6DR4faKks4tuE5japmVTxpOGyCniKLylo8gVaKO1z2DnCS3C19ZUuwr9rL3xf/lP63lZ+kMdhwMTkROEmWQQAptaTaUkCAwEAAQ==-----END PUBLIC KEY-----
+"@
+
+# Phoenix サーバを起動する
+# cmd.exe 経由で実行することで、iex の -S オプションが正しく解釈されるようにする
+cmd /c "iex -S mix phx.server"

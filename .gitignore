@@ -42,3 +42,9 @@ log
 
 #VS Code
 .vscode
+
+# cert
+priv/certs/
+
+_README.md
+README.txt
