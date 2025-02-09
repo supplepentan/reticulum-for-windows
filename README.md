@@ -16,7 +16,15 @@ https://hexdocs.pm/phoenix/installation.html |
 
 ## 初期設定
 
+### セットアップ
+
 `mix deps.get`
+
+### 証明書を生成
+
+`mix certs.gen`
+
+鍵 key.pem と証明書 cert.pem が、priv/certs の中に生成されます。
 
 ## 起動
 
