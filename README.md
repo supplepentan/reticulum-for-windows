@@ -16,15 +16,27 @@ https://hexdocs.pm/phoenix/installation.html |
 
 ## 初期設定
 
-### セットアップ
+### 必要なパッケージをインストールする
 
 `mix deps.get`
 
-### 証明書を生成
+### PostgreSQL にデータベースを作成
+
+`mix ecto.create`
+
+### 証明書を生成（既存のものを使う場合は、省略してください。）
 
 `mix certs.gen`
 
 鍵 key.pem と証明書 cert.pem が、priv/certs の中に生成されます。
+
+### scripts/run-reticulum-local.ps1 の key 内容を変更（既存のものを使う場合は、省略してください。）
+
+perms.pub.pem の内容を書き込みます。
+
+`$env:PERMS_KEY = @"
+-----BEGIN PUBLIC KEY-----...perms.pub.pem の内容を 1 行にして貼り付けてください。...-----END PUBLIC KEY-----
+"@`
 
 ## 起動
 
